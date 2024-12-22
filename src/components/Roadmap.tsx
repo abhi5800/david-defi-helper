@@ -34,23 +34,39 @@ const Roadmap = () => {
         <h2 className="text-4xl font-bold text-center mb-16 text-gray-900">
           Roadmap
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {roadmapItems.map((item, index) => (
-            <div
-              key={index}
-              className="relative p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
-            >
-              <div className="absolute -top-3 -left-3 bg-blue-600 rounded-full p-2">
-                <Milestone className="h-6 w-6 text-white" />
+        <div className="relative max-w-4xl mx-auto">
+          {/* Progressive line */}
+          <div className="absolute left-8 top-0 bottom-0 w-1 bg-blue-200" />
+          
+          {/* Timeline items */}
+          <div className="space-y-12">
+            {roadmapItems.map((item, index) => (
+              <div
+                key={index}
+                className={`relative flex items-start gap-8 ${
+                  index % 2 === 0 ? 'ml-0' : 'ml-8 md:ml-16'
+                }`}
+              >
+                {/* Milestone dot */}
+                <div className="relative z-10 flex-shrink-0">
+                  <div className="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center shadow-lg">
+                    <Milestone className="h-8 w-8 text-white" />
+                  </div>
+                  <div className="absolute top-1/2 left-full h-1 w-8 bg-blue-200 -translate-y-1/2" />
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <h3 className="text-xl font-semibold mb-3 text-gray-900">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600">
+                    {item.description}
+                  </p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 mt-2">
-                {item.title}
-              </h3>
-              <p className="text-gray-600">
-                {item.description}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

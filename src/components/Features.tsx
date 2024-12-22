@@ -7,9 +7,9 @@ const features = [
     description: "Advanced algorithms analyze market conditions to find the best staking opportunities."
   },
   {
-    icon: <TrendingUp className="h-8 w-8" />,
-    title: "Portfolio Rebalancing",
-    description: "Smart rebalancing strategies to maintain optimal asset allocation and maximize returns."
+    icon: <Shield className="h-8 w-8" />,
+    title: "Risk Management",
+    description: "Intelligent risk assessment and portfolio diversification recommendations."
   },
   {
     icon: <TrendingUp className="h-8 w-8" />,

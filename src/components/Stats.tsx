@@ -1,5 +1,5 @@
 const stats = [
-  { value: "$500M+", label: "Total Value Locked" },
+  { value: "$100K+", label: "Total Value Locked" },
   { value: "99.9%", label: "Uptime" },
   { value: "50,000+", label: "Active Users" },
   { value: "15%", label: "Average APY" }
